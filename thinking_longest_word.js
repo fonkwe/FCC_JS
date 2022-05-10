@@ -1,4 +1,5 @@
-/* Problem: Complete the function that takes one argument, 
+/* Problem: ThinkFul 8kyu return longest word
+Complete the function that takes one argument, 
 a list of words, and 
 returns the length of the longest word in the list.*/
 // Requirement: Do not modify the input list.
