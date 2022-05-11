@@ -9,16 +9,16 @@ All the numbers should be treaded as positive integer.
 If no number was given in the string, it should return 0*/
 // Steps:
 //1. check for number inside the string.
-//2. if number is not seen, set a parameter.
-//3. if number is seen, then add the numbers.
+//2. if number is not found, set a parameter.
+//3. if number is found, then add the numbers.
 
 function sumFromString(str){
-    let string = str.match(/\d+/g);// get number globally.
-    if (string === null) {
+    let arr = str.match(/\d+/g);// get number in the whole string.
+    if (arr === null) {
       return 0;// if number not found.
     }
     else{
-      let h = string.reduce((a, b) => +a + +b);
+      let h = arr.reduce((a, b) => +a + +b);
       return +h;// + is to convert string to number
       //bcuz the reduce will return a as "num".
     }  

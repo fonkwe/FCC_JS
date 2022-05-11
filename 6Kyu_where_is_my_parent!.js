@@ -9,16 +9,16 @@ But you were flying nearby and you can see in the dark and have ability to telep
 //-Function input: String contains only letters, uppercase letters are unique.
 /* Task:Place all people in alphabetical order where Mothers are followed by their children, i.e. "aAbaBb" => "AaaBbb".*/
 // Steps:
-// 1.converts the string into an array, with each character beeing one array element.
-// 2.sorts the array in alphabetic order.
+// 1.converts the string into an array, with each character being one array element.
+// 2.sorts the array in alphabetic order making ref of Cap.
 // 3.converted the array elements back to a string.
+
 
 function findChildren(dancingBrigade) {
    let newArr = dancingBrigade.split('');
    console.log(newArr);
-   oldArr = newArr.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()) || b.localeCompare(a));
-//The default sort order is ascending, 
-//built upon converting the elements into strings
+   oldArr = newArr.sort((a,b)=>a.localeCompare(b,"kf",{caseFirst:"upper"}));
+//The default sort order is ascending,
    return oldArr.join('');//returns a new string by concatenating all of the elements in an array
 }
 
