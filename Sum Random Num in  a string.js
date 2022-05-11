@@ -7,15 +7,27 @@ All the numbers should be treaded as positive integer.
  eg, 11-14 should be treated as two numbers 11 and 14.
   Same as 3.14, should be treated as two numbers 3 and 14
 If no number was given in the string, it should return 0*/
+// Steps:
+//1. check for number inside the string.
+//2. if number is not seen, set a parameter.
+//3. if number is seen, then add the numbers.
 
 function sumFromString(str){
-    str = "In 2015, I want to know how much does iPhone 6+ cost?"
-    const string = str.split("");
-    const matches = string.match(/\d+/g);
-    return matches;
-  // ...
+    let string = str.match(/\d+/g);// get number globally.
+    if (string === null) {
+      return 0;// if number not found.
+    }
+    else{
+      let h = string.reduce((a, b) => +a + +b);
+      return +h;// + is to convert string to number
+      //bcuz the reduce will return a as "num".
+    }  
 }
-console.log(matches);
+
+console.log(sumFromString("In 2015, I want to know how much does iPhone 6+ cost?")); //== 2021
+console.log(sumFromString("1+1=2")); //== 4
+console.log(sumFromString("e=mc^2")); //== 2
+
 
 
 
