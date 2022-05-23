@@ -1,5 +1,6 @@
 /* 
-Description: 6 kyuRoman Numerals Decoder
+Problem: 6 kyuRoman Numerals Decoder
+
 Create a function that takes a Roman numeral as its argument and returns its value as a numeric decimal integer. 
 You don't need to validate the form of the Roman numeral.
 Modern Roman numerals are written by expressing each decimal digit of the number to be encoded separately, starting with the leftmost digit and skipping any 0s.
@@ -18,16 +19,18 @@ C          100
 D          500
 M          1,000
 */
-// Steps 1. Declare a Array that has symbol and values.
+// Steps
+// 1. Declare a Array that has symbol and values.
 //2. match the string given with the symbols.
 //3. get the corresponding value.
 
 
 
 function solution(roman){
-    let conversion = {M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1};
+    let data = {M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1};
     
-    return roman.match(/CM|CD|XC|XL|IX|IV|\w/g).reduce((accum, roman) => accum + conversion[roman], 0);
+    return roman.match(/CM|CD|XC|XL|IX|IV|\w/g).reduce((value, roman) => value + data[roman], 0);
  }
 
+ //test
  console.log(solution('XXI')); //== 21
