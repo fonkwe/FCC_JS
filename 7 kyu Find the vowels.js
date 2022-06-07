@@ -24,13 +24,11 @@
 function vowelIndices(word){
     let wordArray = word.split("");
     console.log(wordArray)
-    let wordVowels = ["a", "e", "i", "o" , "u", "y"];
-    console.log(wordVowels)
-    let wordContainer = 0;
-    let result = [];
-    for( let i = 0; i < wordArray.length; i++) {
-        
-
+    let wordContainer = [];
+    for( let i = 0; i < word.length; i++) {
+      if (/[aeuoiy]/gi.test(wordArray[i])){
+        wordContainer.push(i+1)
+      }
     }
     return wordContainer;
     //your code here
