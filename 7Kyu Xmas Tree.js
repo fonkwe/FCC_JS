@@ -14,13 +14,20 @@
 //Implementation: 
 
 function xMasTree(n){
-    let arr = [];
-    for(let i = 1; i < n; i++){
-       arr.push(''.repeat(n-i)+'*'.repeat((i - 1) * 2 + 1)+''.repeat(n - i))
-       console.log(arr);
-
-    }
-    return arr.join('\n')
+   let hash = "#";
+   let underscore = "_";
+   let finalArr = [];
+   let temp = (n * 2) - 1;
+   tmpN = temp;
+   finalArr.unshift(underscore.repeat(n - 1).concat("#").concat(underscore.repeat(n - 1)))
+   finalArr.unshift(underscore.repeat(n - 1).concat("#").concat(underscore.repeat(n - 1)))
+   while(tmpN > 0){
+       finalArr.unshift(underscore.repeat((temp - tmpN) / 2).concat(hash.repeat(tmpN)).concat(underscore.repeat((temp - tmpN) / 2)));
+       tmpN -= 2;
+   }
+   //complete this code
+   console.log(finalArr)
+   return finalArr;
     }
    //complete this code
 
